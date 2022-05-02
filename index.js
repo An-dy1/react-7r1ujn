@@ -38,10 +38,13 @@ function pintToGallon(pint) {
 }
 
 function LiquidInput(props) {
+  // more efficient than calling toFixed on every setX function:
+  // value={Number(props.amount).toFixed(2)}
   return (
     <fieldset>
       <label>{props.unit}</label>
       <br />
+
       <input value={props.amount} onChange={props.onChange} />
     </fieldset>
   );
